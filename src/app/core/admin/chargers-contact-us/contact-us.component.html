@@ -1,0 +1,191 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Contact Us
+          </h6>
+
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-user-shield text-dark"></i>
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+          <!-- <a
+              href="javascript:void(0)"
+              class="btn btn-sm btn-default"
+              (click)="openModal(addModal, undefined)"
+            >
+              Add Payment Channel
+            </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <ul class="list-group list-group-flush list">
+    <li class="list-group-item px-0">
+      <div class="row align-items-center">
+        <div class="col-md-3 text-center py-3">
+          <img
+            width="70%"
+            alt="Image placeholder"
+            src="assets/img/default/contactus.png"
+          />
+        </div>
+
+        <div class="col-md-6 py-3 pt-3">
+          <h4>Contact Details</h4>
+          <p><i class="fas fa-phone"></i>&nbsp;&nbsp; 100</p>
+          <p><i class="fas fa-envelope"></i>&nbsp;&nbsp; abc@unifi.com</p>
+          <p>
+            <i class="fas fa-map-marker text-danger"></i>&nbsp;&nbsp; TM
+            WHOLESALE, Level 54 North Wing Menara TM, Jalan Pantai Baharu 50672
+            Kuala Lumpur, Malaysia
+          </p>
+        </div>
+
+        <div class="col-md-3">
+          <button class="btn btn-info" (click)="openModal(addModal, undefined)">
+            Edit
+          </button>
+          <button class="btn btn-success" (click)="confirm()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<ng-template #addModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Tambah Payment Channel
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="form-control-label">Phone Number</label>
+      <input
+        class="form-control"
+        placeholder="Enter Name"
+        value="100"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Email</label>
+      <input
+        class="form-control"
+        placeholder="Enter Name"
+        value="abc@unifi.com"
+        type="text"
+      />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Address</label>
+      <input
+        class="form-control"
+        placeholder="Enter Name"
+        value="TM
+      WHOLESALE, Level 54 North Wing Menara TM, Jalan Pantai Baharu 50672
+      Kuala Lumpur, Malaysia"
+        type="text"
+      />
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('add new data')">
+        Simpan
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Tutup
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Edit Payment Channel
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="form-control-label">Nama Payment Channel</label>
+      <input class="form-control" placeholder="Enter Name" type="text" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label"></label>
+      <input
+        class="form-control"
+        placeholder="Enter Amount"
+        type="datetime-local"
+      />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Keterangan</label>
+      <input
+        class="form-control"
+        placeholder="Enter Keterangan"
+        type="datetime-local"
+      />
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('edit data')">
+        Simpan
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Tutup
+      </button>
+    </div>
+  </div>
+</ng-template>

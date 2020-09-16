@@ -1,0 +1,236 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <!-- <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Forecast
+          </h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-file text-dark"></i>
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div> -->
+        <!-- <div class="col-lg-6 col-5 text-right">
+          <a
+            href="javascript:void(0)"
+            class="btn btn-sm btn-default"
+            (click)="openModal(addModal, undefined)"
+          >
+            Add Delivery Service
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col">Map</div>
+            <div class="col text-right">
+              <button
+                class="btn btn-default btn-sm"
+                (click)="successAlert('print report')"
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style="height: 400px;"
+          leaflet
+          [leafletOptions]="options"
+          [leafletLayers]="layers"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <h3 class="m-0">Nearby Me</h3>
+        </div>
+        
+          <ngx-datatable
+            class="bootstrap selection-cell"
+            [columnMode]="'force'"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            [rowHeight]="'auto'"
+            [limit]="tableEntries != -1 ? tableEntries : undefined"
+            [rows]="listPenguatkuasa"
+            (activate)="onActivate($event)"
+          >
+            <ngx-datatable-column name="No">
+              <ng-template
+                let-rowIndex="rowIndex"
+                let-row="row"
+                ngx-datatable-cell-template
+              >
+                <strong>{{ rowIndex + 1 }}</strong>
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Item(s)</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.type }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Address</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.address }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Action</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                <a (click)="openModal(createUser)" style="cursor: pointer;">
+                  <i class="fas fa-edit fa-2x text-default"></i
+                ></a>
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        
+      </div>
+    </div>
+  </div> 
+</div>
+
+<ng-template #createUser>
+    <div class="modal-header bg-default">
+        <h6 class="modal-title text-white my-auto" id="modal-title-default">
+            Redeem Form
+        </h6>
+
+        <button
+            aria-label="Close"
+            class="close"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            <span aria-hidden="true" class="text-white my-auto"> × </span>
+        </button>
+    </div>
+
+
+
+
+
+    <div class="modal-body">
+        <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="form-control-label">
+                                    Name
+                                </label>
+                                <input class="form-control" placeholder="" type="text" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="form-control-label">
+                                    Gender
+                                </label>
+                                <select class="custom-select form-control">
+                                    <option selected>Please choose your gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="example-datetime-local-input" class="form-control-label">Date/Time</label>
+                                <input class="form-control" type="datetime-local" value="2018-11-23T10:30:00"
+                                    id="example-datetime-local-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                          <label class="form-control-label">
+                                    Receipt
+                                </label>
+                            <div class=" custom-file">
+                              <input
+                                class=" custom-file-input"
+                                id="customFileLang"
+                                lang="en"
+                                type="file"/>
+                               <label class=" custom-file-label" for="customFileLang">
+                                  Please upload your receipt
+                                </label>
+                           </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label class="form-control-label">
+                                    Phone number
+                                </label>
+                                <input class="form-control" placeholder="" type="text" />
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+        
+    </div>
+
+    <div class="modal-footer">
+        <button 
+            class="btn btn-success"
+            type="button"
+            (click)="navigatePage('history')"
+            
+        >
+            Submit
+        </button>
+
+        <button
+            class="btn btn-outline-danger ml-auto"
+            data-dismiss="modal"
+            type="button"
+            (click)="closeModal()"
+        >
+            Close
+        </button>
+    </div>
+</ng-template>

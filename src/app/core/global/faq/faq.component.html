@@ -1,0 +1,400 @@
+<nav
+  id="navbar-main"
+  class="navbar navbar-horizontal navbar-main navbar-expand-lg navbar-dark"
+  style="background-color: #c0e7e5;"
+>
+  <div class="container">
+    <a
+      class="navbar-brand"
+      style="cursor: pointer;"
+      (click)="navigatePage('home')"
+    >
+      <img src="assets/img/logo/tldm-logo.png" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbar-collapse"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseBasic"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse navbar-custom-collapse collapse"
+      id="collapseBasic"
+    >
+      <div class="navbar-collapse-header">
+        <div class="row">
+          <div class="col-6 collapse-brand">
+            <a (click)="navigatePage('home')">
+              <img src="assets/img/brand/blue.png" />
+            </a>
+          </div>
+          <div class="col-6 collapse-close">
+            <button
+              type="button"
+              class="navbar-toggler"
+              data-toggle="collapse"
+              data-target="#navbar-collapse"
+              aria-controls="navbar-collapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              (click)="isCollapsed = !isCollapsed"
+            >
+              <span></span> <span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('user-dashboard')"
+          >
+            <span class="nav-link-inner--text">Dashboard</span>
+          </a>
+        </li> -->
+        <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('home')"
+          >
+            <span class="nav-link-inner--text">Menu Utama</span>
+          </a>
+        </li>
+        <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('faq')"
+          >
+            <span class="nav-link-inner--text">Soalan Lazim</span>
+          </a>
+        </li>
+        <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('about-us')"
+          >
+            <span class="nav-link-inner--text">Mengenai Kami</span>
+          </a>
+        </li>
+        <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('survey')"
+          >
+            <span class="nav-link-inner--text">Maklum Balas</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('refund')"
+          >
+            <span class="nav-link-inner--text">Refund</span>
+          </a>
+        </li> -->
+        <!-- <li class="nav-item" style="cursor: pointer;">
+          <a
+            class="nav-link text-dark"
+            routerLinkActive="active"
+            style="cursor: pointer;"
+            (click)="navigatePage('complaint')"
+          >
+            <span class="nav-link-inner--text">Complaint</span>
+          </a>
+        </li> -->
+      </ul>
+      <hr class="d-lg-none" />
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="#"
+            target="_blank"
+            tooltip="Like us on Facebook"
+          >
+            <i class="fab fa-facebook-square text-blue"></i>
+            <span class="nav-link-inner--text d-lg-none text-dark"
+              >Facebook</span
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="#"
+            target="_blank"
+            tooltip="Follow us on Instagram"
+          >
+            <i class="fab fa-instagram text-danger"></i>
+            <span class="nav-link-inner--text d-lg-none text-dark"
+              >Instagram</span
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-link-icon"
+            href="#"
+            target="_blank"
+            tooltip="Follow us on Twitter"
+          >
+            <i class="fab fa-twitter-square text-default"></i>
+            <span class="nav-link-inner--text d-lg-none text-dark"
+              >Twitter</span
+            >
+          </a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown" dropdown>
+            <a
+              href="javascript:void(0)"
+              id="navbarDropdownMenuLink2"
+              dropdownToggle
+            >
+              <img
+                width="17px"
+                height="15px"
+                src="assets/img/icons/flags/MY.png"
+              />
+            </a>
+            <ul
+              aria-labelledby="navbarDropdownMenuLink2"
+              *dropdownMenu
+              class="dropdown-menu"
+            >
+              <li>
+                <a class="dropdown-item" href="javascript:void(0)">
+                  <img
+                    width="17px"
+                    height="15px"
+                    src="assets/img/icons/flags/GB.png"
+                  />
+                  EN
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item active" href="javascript:void(0)">
+                  <img
+                    width="17px"
+                    height="15px"
+                    src="assets/img/icons/flags/MY.png"
+                  />
+                  BM
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="nav-item d-none text-white d-lg-block ml-lg-4">
+          <a (click)="navigatePage('login')" style="cursor: pointer;">
+            <span class="btn-inner--icon">
+              <i class="fas fa-user text-dark"></i>
+            </span>
+            <span class="nav-link-inner--text text-dark"
+              >&nbsp;&nbsp;Log Masuk</span
+            >
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="main-content" style="background-color: #219ca0;">
+  <!-- Header -->
+
+  <section class="section section-lg pt-3 pb-4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="text-center text-white pt-4 pb-5">
+          <h1 class="text-white">Soalan Lazim Mengenai Portal Selangor</h1>
+        </div>
+        <div class="col-lg-12 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <accordion [isAnimated]="true">
+                <accordion-group class="pb--1">
+                  <h5 class="mb-0" accordion-heading>
+                    1. Apakah akronim atau singkatan nama bagi Jabatan
+                    Meteorologi Malaysia?
+                  </h5>
+                  Nama singkatan atau akronim rasmi bagi Jabatan Meteorologi
+                  Malaysia ialah MetMalaysia.
+                </accordion-group>
+                <accordion-group>
+                  <h5 class="mb-0" accordion-heading>
+                    2. Bagaimanakah cara untuk menghubungi Ibu Pejabat
+                    MetMalaysia dan Pejabat Meteorologi Negeri?
+                  </h5>
+                  <p>
+                    Alamat, nombor telefon dan nombor faksimili bagi Ibu Pejabat
+                    MetMalaysia dan Pejabat-Pejabat Meteorologi Negeri seluruh
+                    Malaysia boleh didapati di pautan “Hubungi Kami” pada laman
+                    web ini.
+                  </p>
+                </accordion-group>
+                <accordion-group>
+                  <h5 class="mb-0" accordion-heading>
+                    3. Bagaimanakah cara untuk mendapatkan ramalan cuaca terkini
+                    yang dikeluarkan selain dari laman web rasmi MetMalaysia?
+                  </h5>
+                  <p>
+                    Selain daripada media cetak dan elektronik, pengguna mudah
+                    alih iOS dan Android boleh memuat turun aplikasi mudah alih
+                    myCuaca bagi mendapatkan maklumat ramalan cuaca terkini.
+                    Pada masa yang sama, siaran laporan cuaca akan ke udara
+                    sebanyak tiga (3) kali sehari melalui saluran RTM1 semasa
+                    rancangan Selamat Pagi Malaysia pada jam 9.00 pagi, Berita
+                    Nasional 5 pada jam 5.00 petang dan Berita Nasional 8 pada
+                    jam 8.00 malam.
+                  </p>
+                </accordion-group>
+                <accordion-group>
+                  <h5 class="mb-0" accordion-heading>
+                    4. Bagaimanakah cara untuk mendapatkan maklumat meteorologi
+                    bagi tujuan penerbitan awam/ maklumat bidang kewartawanan?
+                  </h5>
+                  <p>
+                    Sila berhubung dengan pegawai di Unit Komunikasi Korporat
+                    melalui emel ukk@met.gov.my bagi tujuan tersebut.
+                  </p>
+                </accordion-group>
+                <accordion-group>
+                  <h5 class="mb-0" accordion-heading>
+                    5. Apakah prosedur permohonan untuk mendapatkan data dan
+                    maklumat meteorologi serta berapakah caj yang akan dikenakan
+                    ke atasnya?
+                  </h5>
+                  Permohonan data dan maklumat meteorologi boleh dikemukakan
+                  melalui emel klim@met.gov.my dan rujuk dokumen Jadual Akta Fi
+                  untuk mengetahui caj data.
+                </accordion-group>
+              </accordion>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<!-- Footer -->
+<footer class="py-5 bg-secondary" id="footer-main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-dark">
+        <span style="font-size: large; font-weight: bold;">Hubungi Kami</span>
+        <br /><br />
+        <span
+          ><i class="fas fa-envelope text-yellow"></i
+          >&nbsp;&nbsp;mmd@met.gov.my</span
+        ><br />
+        <span
+          ><i class="fas fa-phone text-brown"></i>&nbsp;&nbsp;Tel: (603)
+          79678000 </span
+        ><br />
+        <span
+          ><i class="fas fa-phone text-brown"></i>&nbsp;&nbsp;Faks: (603)
+          79550964</span
+        ><br />
+        <span
+          ><i class="fas fa-phone text-brown"></i>&nbsp;&nbsp;Hotline:
+          1-300-22-1638</span
+        >
+      </div>
+      <div class="col-md-4 text-dark">
+        <span style="font-size: large; font-weight: bold;">Waktu Operasi </span>
+        <br /><br />
+        <span>Hari: Isnin - Jumaat</span><br />
+        <span>Servis Kaunter: 8.15 AM - 4.15 PM</span>
+      </div>
+      <div class="col-md-4 text-dark">
+        <span style="font-size: large; font-weight: bold;">Alamat</span>
+        <br /><br />
+        <span>
+          <i class="fas fa-map-marker-alt text-danger"></i>&nbsp;&nbsp;Pejabat
+          Jabatan Meteorologi Malaysia<br />
+          Jalan Sultan,<br />
+          46667 Petaling Jaya,<br />
+          Selangor Darul Ehsan.
+        </span>
+      </div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div class="row align-items-center justify-content-xl-between">
+      <div class="col-xl-6">
+        <div class="copyright text-center text-xl-left text-muted">
+          &copy; {{ test | date: "yyyy" }}
+          <a href="#" class="font-weight-bold ml-1" target="_blank"
+            >TLDM - MCS</a
+          >
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <ul
+          class="nav nav-footer justify-content-center justify-content-xl-end"
+        >
+          <li class="nav-item" style="cursor: pointer;">
+            <a
+              class="nav-link text-dark"
+              routerLinkActive="active"
+              style="cursor: pointer;"
+              (click)="navigatePage('faq')"
+            >
+              <span class="nav-link-inner--text">Soalan Lazim</span>
+            </a>
+          </li>
+
+          <li class="nav-item" style="cursor: pointer;">
+            <a href="#" class="nav-link" target="_blank">Mengenai Kami</a>
+          </li>
+          <!-- <li class="nav-item" style="cursor: pointer;">
+            <a
+              href="http://blog.creative-tim.com?ref=adpa-presentation-page"
+              class="nav-link"
+              target="_blank"
+              >Disclaimer</a 
+            >
+          </li> -->
+          <!-- <li class="nav-item">
+            <a
+              href="https://www.creative-tim.com/license?ref=adpa-presentation-page"
+              class="nav-link"
+              target="_blank"
+              >License</a
+            >
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <livechat-widget
+      #liveChatWidget
+      licenseId="11082047"
+      (onChatLoaded)="onChatLoaded($event)"
+      (onChatWindowOpened)="onChatWindowOpened()"
+      (onChatWindowMinimized)="onChatWindowMinimized()"
+      [visitor]="visitor"
+      [params]="params"
+    ></livechat-widget>
+  </div>
+</footer>

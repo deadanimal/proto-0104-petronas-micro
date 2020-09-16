@@ -1,0 +1,306 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <!-- <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Warning
+          </h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-file text-dark"></i>
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div> -->
+        <!-- <div class="col-lg-6 col-5 text-right">
+          <a
+            href="javascript:void(0)"
+            class="btn btn-sm btn-default"
+            (click)="openModal(addModal, undefined)"
+          >
+            Add Bill Statement Template
+          </a>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <h3 class="m-0">Gun Predictor</h3>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivAcWarn"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <h3 class="m-0">Gun Simulator</h3>
+        </div>
+        <div class="card-body">
+          <div class="chart">
+            <div class="amchart" id="chartdivAcWarn1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col">Heat Map</div>
+            <div class="col text-right">
+              <button
+                class="btn btn-default btn-sm"
+                (click)="successAlert('print report')"
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+        <div #mapEl class="app-main"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <div class="row">
+            <div class="col">Warning</div>
+            <div class="col text-right">
+              <button
+                class="btn btn-default btn-sm"
+                (click)="successAlert('print report')"
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          style="height: 350px;"
+          leaflet
+          [leafletOptions]="options"
+          [leafletLayers]="layers"
+        ></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-header bg-secondary">
+          <h5 class="h3 mb-0">Warship</h5>
+        </div>
+
+        <div class="card-body">
+          <ul class="list-group list-group-flush list my--3">
+
+            <li class="list-group-item px-0">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <a class="avatar" href="javascript:void(0)">
+                    <img
+                      alt="Image placeholder"
+                      src="assets/img/google/ship2.png"
+                    />
+                  </a>
+                </div>
+
+                <div class="col ml--2">
+                  <h4 class="mb-0">
+                    Warship 1
+                    <a href="javascript:void(0)"> </a>
+                  </h4>
+
+                  <span class="text-warning"> ● </span>
+
+                  <small>Alert Level low  </small>
+                </div>
+
+                <div class="col-auto">
+                  <button class="btn btn-sm btn-primary" type="button">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </li>
+
+            <li class="list-group-item px-0">
+              <div class="row align-items-center">
+                <div class="col-auto">
+                  <a class="avatar" href="javascript:void(0)">
+                    <img
+                      alt="Image placeholder"
+                      src="assets/img/google/ship1.png"
+                    />
+                  </a>
+                </div>
+
+                <div class="col ml--2">
+                  <h4 class="mb-0">
+                    <a href="javascript:void(0)"> Warship 2 </a>
+                  </h4>
+
+                  <span class="text-success"> ● </span>
+
+                  <small> Alert Level low </small>
+                </div>
+
+                <div class="col-auto">
+                  <button class="btn btn-sm btn-primary" type="button">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #viewModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      View Warning
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body"></div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('add new data')">
+        Save
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Edit Template
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="form-control-label">Message</label>
+      <quill-editor></quill-editor>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Logo</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Icon</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Picture</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Color</label>
+      <input class="form-control" placeholder="Enter Name" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Customer Segment</label>
+      <select class="form-control" type="text">
+        <option>Consumer</option>
+        <option>SME</option>
+        <option>TMOne</option>
+        <option>Global</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Product And Service</label>
+      <select class="form-control" type="text">
+        <option>unifi</option>
+        <option>voice</option>
+        <option>unifi mobile</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Product And Service</label>
+      <select class="form-control" type="text">
+        <option>unifi</option>
+        <option>voice</option>
+        <option>unifi mobile</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Festive Seasons</label>
+      <select class="form-control" type="text">
+        <option>Hari Raya</option>
+        <option>Chinese New Year</option>
+        <option>Deepavali</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('edit data')">
+        Save
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</ng-template>

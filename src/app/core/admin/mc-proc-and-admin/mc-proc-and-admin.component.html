@@ -1,0 +1,464 @@
+<div class="header pb-6">
+  <div class="container-fluid">
+    <div class="header-body">
+      <div class="row align-items-center py-4">
+        <div class="col-lg-6 col-7">
+          <h6 class="h2 text-dark d-inline-block mb-0">
+            Procurement and Administration
+          </h6>
+          <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+              <li class="breadcrumb-item">
+                <a href="javascript:void(0)">
+                  <i class="fas fa-mail-bulk text-dark"></i>
+                </a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-lg-6 col-5 text-right">
+          <!-- <a
+            href="javascript:void(0)"
+            class="btn btn-sm btn-default"
+            (click)="openModal(addModal, undefined)"
+          >
+            Add Bill Statement Template
+          </a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--6">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <mat-horizontal-stepper labelPosition="bottom" #stepper>
+          <mat-step>
+            <ng-template matStepLabel>Information</ng-template>
+
+            <!-- maklumat penjaga -->
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Nama</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Amount</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Amount"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Department</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Department"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Notes/Reason</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Reason"
+                    type="datetime-local"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- maklumat penjaga -->
+
+            <div class="text-right">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Item </ng-template>
+
+            <!-- maklumat akademik -->
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <label class="form-control-label">Item</label>
+                  <input
+                    class="form-control"
+                    placeholder="Masukkan Gred/Pangkat"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="form-group">
+                  <label class="form-control-label">Date</label>
+                  <input
+                    class="form-control"
+                    placeholder="Masukkan Sekolah"
+                    type="datetime-local"
+                  />
+                </div>
+              </div>
+            </div>
+            <br />
+            <h3 class="m-0">Item</h3>
+            <br />
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="form-control-label">Item Name</label>
+                  <input
+                    class="form-control"
+                    placeholder="Enter Name"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label class="form-control-label">Type</label>
+                  <select class="form-control" placeholder="" type="text">
+                    <option checked>choose</option>
+                    <option>Standard Purchase Orders (PO)</option>
+                    <option>Planned Purchase Orders (PPO)</option>
+                    <option>Blanket Purchase Orders (BPO) </option>
+                    <option>Contract Purchase Orders (CPO)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-2 pt-1 text-right">
+                <div class="form-group pt-1">
+                  <label class="form-control-label"></label>
+                  <br />
+                  <i class="fa fa-trash-alt fa-2x"></i>
+                </div>
+              </div>
+              <span class="text-blue"> <i class="fa fa-plus"></i> Add </span>
+            </div>
+            <!-- maklumat akademik -->
+
+            <div class="text-right">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Supporting Document</ng-template>
+            <!-- dokumen  -->
+            <div class="form-group">
+              <label class="form-control-label">Receipt</label>
+              <input class="form-control" type="file" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-control-label">Request Form</label>
+              <input class="form-control" type="file" />
+            </div>
+            <!-- dokumen -->
+
+            <div class="text-right">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </mat-step>
+          <mat-step>
+            <ng-template matStepLabel>Disclaimer</ng-template>
+            <p>
+              <input type="checkbox" />&nbsp;&nbsp;Please make sure all data is
+              correct.
+            </p>
+            <div class="text-right">
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
+              <button mat-button>Save</button>
+            </div>
+          </mat-step>
+        </mat-horizontal-stepper>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="m-0">List Of Procurement and Administration</h3>
+        </div>
+        <div class="dataTables_wrapper py-4">
+          <div class="row">
+            <div class="col-sm-12 col-md-6">
+              <div class="dataTables_length" id="datatable_length">
+                <label>
+                  Show
+                  <select
+                    name="datatable_length"
+                    aria-controls="datatable"
+                    class="form-control form-control-sm"
+                    (change)="entriesChange($event)"
+                  >
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="-1">All</option>
+                  </select>
+                  records
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <ngx-datatable
+            class="bootstrap selection-cell"
+            [columnMode]="'force'"
+            [headerHeight]="50"
+            [footerHeight]="50"
+            [rowHeight]="'auto'"
+            [limit]="tableEntries != -1 ? tableEntries : undefined"
+            [rows]="listBillStatement"
+            (activate)="onActivate($event)"
+          >
+            <ngx-datatable-column name="No">
+              <ng-template
+                let-rowIndex="rowIndex"
+                let-row="row"
+                ngx-datatable-cell-template
+              >
+                <strong>{{ rowIndex + 1 }}</strong>
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Name</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.name }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Item</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.item }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Type</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.type }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Amount</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.amount }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Created</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                {{ row.created_at | date: "dd/MM/yyyy" }}
+              </ng-template>
+            </ngx-datatable-column>
+
+            <ngx-datatable-column>
+              <ng-template ngx-datatable-header-template>
+                <span>Action</span>
+              </ng-template>
+              <ng-template let-row="row" ngx-datatable-cell-template>
+                <!-- <button
+                  class="btn btn-sm btn-success"
+                  (click)="openModal(editModal, row)"
+                  style="cursor: pointer;"
+                >
+                  Edit Template
+                </button>
+                <button
+                  class="btn btn-sm btn-warning"
+                  (click)="openModal(editModal, row)"
+                  style="cursor: pointer;"
+                >
+                  View Template
+                </button> -->
+                <a (click)="openModal(viewModal, row)" style="cursor: pointer;">
+                  <i class="fas fa-eye fa-2x text-green"></i></a
+                >&nbsp;&nbsp;&nbsp;
+                <a (click)="openModal(editModal, row)" style="cursor: pointer;">
+                  <i class="fas fa-edit fa-2x text-blue"></i></a
+                >&nbsp;&nbsp;&nbsp;
+                <a (click)="confirm()" style="cursor: pointer;">
+                  <i class="fas fa-trash-alt fa-2x text-red"></i
+                ></a>
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #viewModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      View Procurement and Administration
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <img width="100%" src="assets/img/default/invoice-tem.png" />
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('add new data')">
+        Save
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editModal>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+      Edit Template
+    </h6>
+
+    <button
+      aria-label="Close"
+      class="close"
+      data-dismiss="modal"
+      type="button"
+      (click)="closeModal()"
+    >
+      <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="form-control-label">Message</label>
+      <quill-editor></quill-editor>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Logo</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Icon</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Picture</label>
+      <input class="form-control" type="file" />
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Color</label>
+      <input class="form-control" placeholder="Enter Name" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Customer Segment</label>
+      <select class="form-control" type="text">
+        <option>Consumer</option>
+        <option>SME</option>
+        <option>TMOne</option>
+        <option>Global</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Product And Service</label>
+      <select class="form-control" type="text">
+        <option>unifi</option>
+        <option>voice</option>
+        <option>unifi mobile</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-control-label">Product And Service</label>
+      <select class="form-control" type="text">
+        <option>unifi</option>
+        <option>voice</option>
+        <option>unifi mobile</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-control-label">Festive Seasons</label>
+      <select class="form-control" type="text">
+        <option>Hari Raya</option>
+        <option>Chinese New Year</option>
+        <option>Deepavali</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <div class="text-center">
+      <button class="btn btn-default" (click)="successAlert('edit data')">
+        Save
+      </button>
+      <button
+        class="btn btn-outline-danger ml-auto"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+      >
+        Close
+      </button>
+    </div>
+  </div>
+</ng-template>

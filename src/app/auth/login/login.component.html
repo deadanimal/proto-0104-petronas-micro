@@ -1,0 +1,42 @@
+<ngx-loading-bar></ngx-loading-bar>
+<div class="main-content auth-content d-flex align-items-center">
+  <div class="container mt-4 pb-9">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <div class="card bg-secondary border-0 mb-0">
+          <div class="card-header bg-transparent">
+            <div class="logo-box mb--1 text-center">
+              <img class="logo pt-2 pb-2" [src]="imgLogo" />
+              <img class="logo pt-2 pb-2" [src]="imgLogo2"/>
+            </div>
+          </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center">
+                <h6 class="h2 text-dark d-inline-block mb-0 text-center">Please upload your receipt or scan QR Code<br><br></h6>
+                  <div class=" custom-file">
+                    <input
+                      class=" custom-file-input"
+                      id="customFileLang"
+                      lang="en"
+                      type="file"/>
+                      <label class="custom-file-label" for="customFileLang"></label>
+                  </div>
+                    <br><br>
+                  <div class="text-center">
+                    <h5 class="h5 text-dark d-inline-block mb-0">or</h5>
+                  </div>
+                    <br>
+                  <div>
+                    <button type="button" class="btn btn-outline-primary btn-block my-2" (click)="navigatePage('map')">
+                      Scan QR code
+                    </button>
+                    <button type="button" class="btn btn-outline-primary btn-block my-2" (click)="navigatePage('forecasts')">
+                      Next
+                    </button>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
