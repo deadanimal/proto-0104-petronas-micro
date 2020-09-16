@@ -29,7 +29,7 @@ import { LoadingBarService } from "@ngx-loading-bar/core";
 import { AuthService } from "src/app/shared/services/auth/auth.service";
 import { NotifyService } from "src/app/shared/handler/notify/notify.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { tileLayer, latLng, marker, icon } from "leaflet";
+import { tileLayer, latLng, marker, icon, } from "leaflet";
 import { BsDropdownConfig } from "ngx-bootstrap/dropdown";
 import "leaflet/dist/images/marker-shadow.png";
 
