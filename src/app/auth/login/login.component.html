@@ -9,10 +9,10 @@
               <img class="logo pt-2 pb-2" [src]="imgLogo" />
               <img class="logo pt-2 pb-2" [src]="imgLogo2"/>
             </div>
-          </div>
+          </div>   
             <div class="card-body px-lg-5 py-lg-5">
               <div class="text-center">
-                <h6 class="h2 text-dark d-inline-block mb-0 text-center">Please upload your receipt or scan QR Code<br><br></h6>
+                <h6 class="h2 text-dark d-inline-block mb-0 text-center">Please upload your receipt<br></h6>
                   <div class=" custom-file">
                     <input
                       class=" custom-file-input"
@@ -27,15 +27,22 @@
                   </div>
                     <br>
                   <div>
-                    <button type="button" class="btn btn-outline-primary btn-block my-2" (click)="navigatePage('map')">
-                      Scan QR code
-                    </button>
+                    <h6 class="h2 text-dark d-inline-block mb-0 text-center">Scan QR code<br></h6>
                     <button type="button" class="btn btn-outline-primary btn-block my-2" (click)="navigatePage('forecasts')">
-                      Next
+                      QR code
                     </button>
                   </div>
-          </div>
-        </div>
+                      <div class="logo-box mb--1 text-center">
+                        <img class="logo pt-2 pb-2" [src]="imgQR" />
+                      </div>
+
+                </div>
+                </div>
+                </div>
+
+
+              
+        
       </div>
     </div>
   </div>
